@@ -3,7 +3,7 @@ using System.Text;
 
 namespace ActivityPlanner.Models
 {
-    internal class Person
+    internal class Person: INamable
     {
         //field: data container
         private string surname;
