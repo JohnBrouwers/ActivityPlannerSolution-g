@@ -7,12 +7,17 @@ namespace ActivityPlanner
     {
         static void Main(string[] args)
         {
-            Person person = new Person("Jansen");
-            person.Firstname = "";
-            Person p = new Employee("Hans");
-            Employee e = new Person();
 
-            Console.WriteLine("Hello World!");
+            Organiser organiser = new Organiser("Schriever") { Firstname = "Jan"};
+
+            Invitee invitee = new Invitee("Hu") { Firstname = "Feixiang", SurnamePrefix = "van der" };
+
+
+            Console.WriteLine(organiser.GetFullname());
+            Console.WriteLine(invitee.GetFullname());
+
+
+            Console.ReadLine();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace ActivityPlanner.Models
 {
@@ -36,6 +37,12 @@ namespace ActivityPlanner.Models
         {
             this.Surname = surname;
         }
+
+        public virtual string GetFullname() 
+        {
+            return (Firstname + (" " + SurnamePrefix).TrimEnd() + " " + Surname).Trim();
+        }
+
 
         public override string ToString()
         {
