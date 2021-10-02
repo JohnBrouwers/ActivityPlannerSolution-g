@@ -3,18 +3,18 @@ using System.Text;
 
 namespace ActivityPlanner.Models
 {
-    internal class Person: INamable
+    internal class Person: INamable, IComparable<Person>
     {
         //field: data container
-        private string surname;
+        private string _surname;
 
         //Auto implemented property:
         public string Firstname { get; set; }
 
         //Expression bodied member(property):
         public string Surname { 
-            get => this.surname;
-            set => this.surname = value; 
+            get => this._surname;
+            set => this._surname = value; 
         }
 
         //Fully implemented property:
@@ -25,7 +25,7 @@ namespace ActivityPlanner.Models
             set {
                 if (value.Length < 3)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("FOUT!!!!");
                 }    
                 surnamePrefix = value; 
             }
@@ -49,5 +49,9 @@ namespace ActivityPlanner.Models
             return base.ToString();
         }
 
+        public int CompareTo(Person other)
+        {
+            return this.Surname.CompareTo(other.Surname);
+        }
     }
 }
